@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cookie&family=Courgette&family=Farro:wght@300;400&family=Lobster+Two&family=Meie+Script&family=Mochiy+Pop+P+One&family=Oswald&family=Oxygen&family=PT+Sans&family=Poppins:wght@300&family=Rancho&family=Roboto:wght@300;400&family=Rubik:wght@300;500&family=Source+Sans+Pro&family=Teko:wght@500&display=swap');
+
+
+#logo h1{
+    font-family: 'Cookie', cursive;
+    text-align: left;
+}
+
+.nav-menu .menu{
+    margin-right: 30px;
+    border: 1px solid red;
+    padding: 5px 30px;
+}
+
+.nav-menu .menu:hover{
+    background-color: red; 
+}
+
