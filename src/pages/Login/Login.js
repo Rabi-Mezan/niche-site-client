@@ -1,5 +1,5 @@
 import React from 'react';
-import bg1 from '../../img/Loginbg.png'
+import bg1 from '../../img/testi.jpg'
 import { useForm } from "react-hook-form";
 import useFirebase from '../../hooks/useFirebase';
 import { Link } from 'react-router-dom';
@@ -24,8 +24,8 @@ const Login = () => {
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover'
             }}
-            className='h-screen relative lg:flex justify-end p-10'>
-            <div className='flex flex-col bg-black justify-center items-center lg:w-1/3  p-5'>
+            className='min-h-screen relative lg:flex justify-end p-10'>
+            <div className='flex flex-col bg-black justify-center items-center lg:w-2/4  p-5'>
                 <h1 className='text-3xl font-bold text-gray-200 mb-5'>LOGIN HERE</h1>
                 <form className='w-2/3 flex flex-col my-5' onSubmit={handleSubmit(onSubmit)}>
                     <input placeholder='EMAIL' type='email' required className='border w-full h-10 mb-4 rounded shadow p-1'  {...register("email", { required: true, maxLength: 20 })} />
@@ -43,7 +43,7 @@ const Login = () => {
                     </h4>
                     <small className='text-white '>Or</small>
                     <br />
-                    <button onClick={googlesignin} className='w-full bg-white p-3 text-xs lg:text-sm mt-2'>
+                    <button onClick={googlesignin} className='w-full bg-white p-3 text-xs lg:text-sm mt-2 shadow-lg'>
 
                         SIGN IN USING GOOGLE</button>
                 </div>

@@ -14,7 +14,7 @@ const div = () => {
                     <div class="flex mt-8 flex-col md:flex-row md:justify-between">
                         <p class="w-full md:w-2/3 text-gray-400">To ensure that all Speeddo content is verifiable, anyone may question an uncited claim. If your work has been tagged</p>
                         <div class="w-44 pt-6 md:pt-0">
-                            <Link to='/' class="bg-red-500 justify-center text-center rounded-lg shadow px-10 py-3 flex items-center">Contact US</Link>
+                            <Link to='/' class="bg-red-700 justify-center text-center rounded-lg shadow px-10 py-3 flex items-center">Contact US</Link>
                         </div>
                     </div>
                     <div class="flex flex-col">

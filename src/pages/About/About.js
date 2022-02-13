@@ -4,7 +4,7 @@ const About = () => {
     return (
         <div>
 
-            <section class="bg-black py-40">
+            <section class="bg-black pt-20">
                 <div class="container px-6 py-8 mx-auto">
                     <div class="items-center lg:flex">
                         <div class="lg:w-full  text-left">
@@ -41,16 +41,44 @@ const About = () => {
                             </div>
                         </div>
 
-                        <div class="mt-8 lg:mt-0 lg:w-1/2">
+                        <div class="mt-8 lg:mt-0 lg:w-full">
                             <div class="flex items-center justify-center lg:justify-end">
                                 <div class="max-w-lg">
-                                    <img class="object-cover object-center w-full h-64 rounded-md shadow" src="https://images.unsplash.com/photo-1576183134792-c1fc4a722596?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdG9yY3ljbGUlMjBzaG9wfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="" />
+                                    <img class="object-cover object-center w-full h-64 rounded-md shadow" src="https://images.unsplash.com/photo-1626130933115-a0dbcaae090b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG9uZGElMjB0ZWFtfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="" />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+
+            <div class="py-4 bg-black text-white">
+                <div class="container mx-auto flex flex-col md:flex-row my-5 ">
+                    <div class="flex flex-col  lg:w-full justify-start text-left p-8">
+                        <p class="text-5xl font-bold md:text-5xl text-red-500 my-4 leading-relaxed ">Contact our Care</p>
+                        <p class="font-sans text-sm md:text-lg my-2 md:my-4"><svg class="inline-block fill-current mr-2"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
+                        </svg>IUT Engineering College Road , Dhaka , 1216</p>
+                        <p class="font-sans text-sm md:text-lg my-2 md:my-4"><svg class="inline-block fill-current mr-2"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z" />
+                        </svg> speeddoShop@gmail.com</p>
+                        <p class="font-sans text-sm md:text-lg my-2 md:my-4"><svg class="inline-block fill-current mr-2"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z" />
+                        </svg>+91745435433</p> <br /> <br />
+                        <p class="text-gray-500 dark:text-gray-400 lg:max-w-md">Press the chat icon at the right bottom corner to have a
+                            live chat with our team.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
         </div>
     );
 };
