@@ -8,6 +8,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Footer from './pages/Shared/Footer/Footer';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import About from './pages/About/About';
+
 
 function App() {
   return (
@@ -22,7 +27,17 @@ function App() {
           <Route path='/home'>
             <Home></Home>
           </Route>
+          <Route path='/login'>
+            <Login></Login>
+          </Route>
+          <Route path='/register'>
+            <Register></Register>
+          </Route>
+          <Route path='/about'>
+            <About></About>
+          </Route>
         </Switch>
+        <Footer></Footer>
       </BrowserRouter>
     </div>
   );

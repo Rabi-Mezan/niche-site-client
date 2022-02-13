@@ -6,13 +6,13 @@
     text-align: left;
 }
 
-.nav-menu .menu{
-    margin-right: 30px;
-    border: 1px solid red;
-    padding: 5px 30px;
-}
+
 
 .nav-menu .menu:hover{
+   
+   transition: all 0.5 ease-in-out;
+    padding: 5px 10px;
+    rotate: 20;
     background-color: red; 
 }
 
