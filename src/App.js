@@ -48,7 +48,7 @@ function App() {
             <Route path='/details/:id'>
               <Details></Details>
             </Route>
-            <PrivateRoute path='/buynow'>
+            <PrivateRoute path='/buynow/:id'>
               <BuyNow></BuyNow>
             </PrivateRoute>
           </Switch>

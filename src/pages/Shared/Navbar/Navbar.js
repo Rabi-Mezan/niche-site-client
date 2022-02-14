@@ -46,7 +46,7 @@ const Navbar = () => {
                             user?.email ?
                                 <div className='flex justify-center items-center'>
 
-                                    <button onClick={logout} className='w-28  h-8 text-center font-bold bg-red-700 text-white mx-10'>
+                                    <button onClick={logout} className='w-20  h-8 text-center font-bold bg-red-700 text-white mx-10'>
                                         Logout
                                     </button>
 
@@ -58,7 +58,7 @@ const Navbar = () => {
 
 
                                 : <Link to='/login' className=''>
-                                    <button className='w-28  h-8 text-center font-bold bg-red-700 text-white mx-10'>
+                                    <button className='w-20  h-8 text-center font-bold bg-red-700 text-white mx-10'>
                                         Login
                                     </button>
                                 </Link>

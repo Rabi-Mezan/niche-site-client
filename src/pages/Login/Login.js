@@ -1,14 +1,13 @@
 import React from 'react';
 import bg1 from '../../img/testi.jpg'
 import { useForm } from "react-hook-form";
-import useFirebase from '../../hooks/useFirebase';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
-    const { googlesignin, setIsLoading } = useFirebase()
+    const { googlesignin, setUser, setIsLoading } = useAuth()
     const location = useLocation();
     const history = useHistory()
 
@@ -23,7 +22,9 @@ const Login = () => {
 
     const handleGoogleSignIn = () => {
         googlesignin()
-            .then(() => {
+            .then((result) => {
+                const user = result.user
+                setUser(user)
                 history.push(redirectUrl)
             })
             .catch(error => {
