@@ -24,7 +24,7 @@ const Featured = () => {
                 {
                     bike.slice(0, 4).map(b =>
                         <div class="flex flex-col items-center justify-center w-full mx-auto shadow-lg">
-                            <div class="w-full h-80 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style={{
+                            <div class="w-full h-60 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style={{
                                 backgroundImage: `url(${b.img}`
                             }}></div>
 
@@ -32,7 +32,7 @@ const Featured = () => {
                                 <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">{b.model}</h3>
 
                                 <div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                                    <span class="font-bold text-gray-800 dark:text-gray-200">{b.price}</span>
+                                    <span class="font-bold text-gray-800 dark:text-gray-200">${b.price}</span>
                                     <Link to={`/buynow/${b._id}`}>
                                         <button class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Buy Now</button>
                                     </Link>

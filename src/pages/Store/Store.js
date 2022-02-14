@@ -18,13 +18,13 @@ const Store = () => {
                 <span className='text-black lg:text-5xl font-bold'>
                     OUR FEATURED BIKES</span></h1>
 
-            <div className='grid lg:grid-cols-3 gap-8 m-10 pb-20'>
+            <div className='grid lg:grid-cols-3 gap-10 m-10 pb-20'>
 
 
                 {
                     bike.map(b =>
                         <div class="flex flex-col items-center justify-center w-full mx-auto shadow-lg">
-                            <div class="w-full h-80 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style={{
+                            <div class="w-full h-60 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style={{
                                 backgroundImage: `url(${b.img}`
                             }}></div>
 

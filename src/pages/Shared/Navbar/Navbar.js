@@ -5,6 +5,7 @@ import logo from '../../../img/sppeed.png'
 import cart from '../../../img/cart.png'
 import useFirebase from '../../../hooks/useFirebase';
 import usericon from '../../../img/user.png'
+import User from '../../Home/User/User';
 
 
 const Navbar = () => {
@@ -46,13 +47,13 @@ const Navbar = () => {
                             user?.email ?
                                 <div className='flex justify-center items-center'>
 
-                                    <button onClick={logout} className='w-20  h-8 text-center font-bold bg-red-700 text-white mx-10'>
+                                    {/* <button onClick={logout} className='w-20  h-8 text-center font-bold bg-red-700 text-white mx-10'>
                                         Logout
-                                    </button>
+                                    </button> */}
 
-                                    <Link to='/'>
-                                        <img className='h-10 w-10' src={usericon} alt="" />
-                                    </Link>
+                                    <div>
+                                        <User></User>
+                                    </div>
                                 </div>
 
 

@@ -17,6 +17,7 @@ import Details from './pages/Deatils/Details';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import BuyNow from './pages/BuyNow/BuyNow';
 import Authprovider from './context/Authprovider';
+import Myorders from './pages/Myorders/Myorders';
 
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
             </Route>
             <Route path='/details/:id'>
               <Details></Details>
+            </Route>
+            <Route path='/myorders'>
+              <Myorders></Myorders>
             </Route>
             <PrivateRoute path='/buynow/:id'>
               <BuyNow></BuyNow>

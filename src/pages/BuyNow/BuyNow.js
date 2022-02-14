@@ -52,10 +52,10 @@ const BuyNow = () => {
             }}
 
 
-            className='w-full mx-auto lg:p-20'>
+            className='w-full mx-auto lg:p-5 min-h-screen '>
 
 
-            <div>
+            <div className=''>
                 <div className='flex flex-col bg-black justify-center items-center lg:w-1/2  p-5'>
 
                     <form className='w-full flex flex-col my-5 p-5' onSubmit={handleSubmit(onSubmit)}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import bg1 from '../../img/testi.jpg'
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
@@ -7,18 +7,34 @@ import { useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
-    const { googlesignin, setUser, setIsLoading } = useAuth()
+    const { googlesignin, setUser, setIsLoading, login, saveUser } = useAuth()
     const location = useLocation();
     const history = useHistory()
+    // const [logindata, setLoginData] = useState({})
 
 
     const redirectUrl = location?.state?.from || '/home'
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data);
+
+        handleLogin(data.email, data.password)
         reset()
     }
+
+    const handleLogin = (email, password) => {
+        login(email, password)
+            .then((userCredential) => {
+                history.push(redirectUrl)
+
+            })
+            .catch((error) => {
+
+            })
+            .finally(() => setIsLoading(false));
+
+    }
+
 
     const handleGoogleSignIn = () => {
         googlesignin()
@@ -50,7 +66,7 @@ const Login = () => {
                 <h1 className='text-3xl font-bold text-gray-200 mb-5'>LOGIN HERE</h1>
                 <form className='w-2/3 flex flex-col my-5' onSubmit={handleSubmit(onSubmit)}>
                     <input placeholder='EMAIL' type='email' required className='border w-full h-10 mb-4 rounded shadow p-1'  {...register("email", { required: true, maxLength: 20 })} />
-                    <input placeholder='PASSWORD' className='border w-full h-10 mb-4 rounded shadow p-1' {...register("password")} />
+                    <input type='password' placeholder='PASSWORD' className='border w-full h-10 mb-4 rounded shadow p-1' {...register("password")} />
 
                     <input className='w-full bg-red-700 h-10 text-white text-xl font-bold rounded shadow' value='LOGIN' type="submit" />
                 </form>

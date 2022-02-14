@@ -1,5 +1,5 @@
 import initAuth from "../Firebase/init";
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 
@@ -12,8 +12,35 @@ const useFirebase = () => {
     const [user, setUser] = useState()
     const [isloading, setIsLoading] = useState(true)
 
-    // google signin
 
+    //register user
+    const registerUser = (name, email, password) => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                // console.log(name, email);
+                const user = userCredential.user;
+                const newUser = { email, displayName: name }
+                setUser(newUser);
+                saveUser(email, name);
+
+            })
+            .catch((error) => {
+
+            });
+    }
+
+
+
+    //login with email password
+    const login = (email, password) => {
+        setIsLoading(true)
+        return signInWithEmailAndPassword(auth, email, password)
+
+    }
+
+
+    // google signin
     const googlesignin = () => {
         setIsLoading(true)
         return signInWithPopup(auth, googleProvider)
@@ -32,6 +59,22 @@ const useFirebase = () => {
         });
     }, [])
 
+
+    //save user
+    const saveUser = (email, displayName) => {
+        const user = { email, displayName };
+        fetch('http://localhost:5000/users', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
+
+
+
     // logout
     const logout = () => {
         signOut(auth).then(() => {
@@ -46,8 +89,11 @@ const useFirebase = () => {
         user,
         setUser,
         googlesignin,
+        login,
+        saveUser,
         logout,
         isloading,
+        registerUser,
         setIsLoading
 
     }

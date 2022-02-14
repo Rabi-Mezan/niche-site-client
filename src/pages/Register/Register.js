@@ -5,11 +5,11 @@ import { useForm } from "react-hook-form";
 import useFirebase from '../../hooks/useFirebase';
 
 const Register = () => {
-    const { googlesignin } = useFirebase()
+    const { googlesignin, registerUser } = useFirebase()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data);
-        reset()
+        registerUser(data.name, data.email, data.password)
+        // reset()
     }
     return (
 
@@ -28,7 +28,7 @@ const Register = () => {
                 <form className='w-2/3 flex flex-col my-3' onSubmit={handleSubmit(onSubmit)}>
                     <input placeholder='NAME' type='text' required className='border w-full h-10 mb-4 rounded shadow p-1'  {...register("name", { required: true, maxLength: 20 })} />
                     <input placeholder='EMAIL' type='email' required className='border w-full h-10 mb-4 rounded shadow p-1'  {...register("email", { required: true, maxLength: 20 })} />
-                    <input placeholder='PASSWORD' className='border w-full h-10 mb-4 rounded shadow p-1' {...register("password")} />
+                    <input type='password' placeholder='PASSWORD' className='border w-full h-10 mb-4 rounded shadow p-1' {...register("password")} />
 
                     <input className='w-full bg-red-700 h-10 text-white text-xl font-bold rounded shadow' value='REGISTER' type="submit" />
                 </form>
