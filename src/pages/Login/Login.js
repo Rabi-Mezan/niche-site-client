@@ -3,9 +3,17 @@ import bg1 from '../../img/testi.jpg'
 import { useForm } from "react-hook-form";
 import useFirebase from '../../hooks/useFirebase';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
-    const { googlesignin } = useFirebase()
+    const { googlesignin, setIsLoading } = useFirebase()
+    const location = useLocation();
+    const history = useHistory()
+
+
+    const redirectUrl = location?.state?.from || '/home'
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -13,6 +21,18 @@ const Login = () => {
         reset()
     }
 
+    const handleGoogleSignIn = () => {
+        googlesignin()
+            .then(() => {
+                history.push(redirectUrl)
+            })
+            .catch(error => {
+
+            })
+            .finally(() => {
+                setIsLoading(false)
+            })
+    }
 
     return (
         <div
@@ -43,7 +63,7 @@ const Login = () => {
                     </h4>
                     <small className='text-white '>Or</small>
                     <br />
-                    <button onClick={googlesignin} className='w-full bg-white p-3 text-xs lg:text-sm mt-2 shadow-lg'>
+                    <button onClick={handleGoogleSignIn} className='w-full bg-white p-3 text-xs lg:text-sm mt-2 shadow-lg'>
 
                         SIGN IN USING GOOGLE</button>
                 </div>

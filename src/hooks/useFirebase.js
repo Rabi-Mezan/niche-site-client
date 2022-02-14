@@ -10,19 +10,14 @@ const auth = getAuth();
 
 const useFirebase = () => {
     const [user, setUser] = useState()
+    const [isloading, setIsLoading] = useState(true)
 
     // google signin
 
     const googlesignin = () => {
+        setIsLoading(true)
+        return signInWithPopup(auth, googleProvider)
 
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
-
-                const user = result.user;
-
-            }).catch((error) => {
-
-            });
     }
 
 
@@ -51,6 +46,8 @@ const useFirebase = () => {
         user,
         googlesignin,
         logout,
+        isloading,
+        setIsLoading
 
     }
 

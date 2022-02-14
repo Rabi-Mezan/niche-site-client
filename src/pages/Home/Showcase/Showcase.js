@@ -29,7 +29,7 @@ const Showcase = () => {
                 </div>
             </div>
 
-            <button className='bg-red-700 text-white font-bold text-xl px-10 py-5 mt-28 lg:w-80 '>Know More </button>
+            <button className='bg-red-700 hover:bg-transparent hover:border-l hover:border-r text-white font-bold text-xl px-10 py-5 mt-28 lg:w-80 '>Know More </button>
         </div>
     );
 };

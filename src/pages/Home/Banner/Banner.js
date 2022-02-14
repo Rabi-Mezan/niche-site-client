@@ -29,13 +29,10 @@ const Banner = () => {
                 }}>
                     <Carousel
                         data={data}
-                        time={2000}
+                        time={3000}
                         width="100%"
-                        height="700px"
-
-
+                        height="600px"
                         slideNumber={false}
-
                         captionPosition="bottom"
                         automatic={true}
                         dots={true}
