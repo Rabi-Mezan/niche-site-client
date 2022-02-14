@@ -6,7 +6,7 @@ const Featured = () => {
     useEffect(() => {
 
 
-        fetch('http://localhost:5000/bikes')
+        fetch('https://speeddo.herokuapp.com/bikes')
             .then(res => res.json())
             .then(data => setBike(data))
 

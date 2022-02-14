@@ -63,7 +63,7 @@ const useFirebase = () => {
     //save user
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://speeddo.herokuapp.com/users', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
