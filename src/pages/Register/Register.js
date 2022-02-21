@@ -22,8 +22,8 @@ const Register = () => {
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover'
             }}
-            className='min-h-screen relative lg:flex justify-end p-10'>
-            <div className='flex flex-col bg-black justify-center items-center lg:w-2/4  p-3'>
+            className='min-h-screen relative lg:flex justify-end lg:p-10 p-2'>
+            <div className='flex flex-col bg-black justify-center items-center lg:w-2/4 w-full h-full  p-5'>
                 <h1 className='text-3xl font-bold text-gray-200 mb-5'>REGISTER HERE</h1>
                 <form className='w-2/3 flex flex-col my-3' onSubmit={handleSubmit(onSubmit)}>
                     <input placeholder='NAME' type='text' required className='border w-full h-10 mb-4 rounded shadow p-1'  {...register("name", { required: true, maxLength: 20 })} />

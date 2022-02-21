@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
+import cogoToast from 'cogo-toast';
 
 const Myorders = () => {
     const { user } = useAuth()
@@ -28,7 +29,7 @@ const Myorders = () => {
                 .then(res => res.json())
                 .then(result => {
                     if (result.deletedCount) {
-                        alert('Deleted Successfully')
+                        cogoToast.success('Order Cancel Successfully!!');
                         setControl(!control)
                     }
                     else {
@@ -42,7 +43,7 @@ const Myorders = () => {
 
 
     return (
-        <div className='grid grid-cols-1 gap-6 w-3/4 h-screen px-5 mx-auto my-10  py-10 bg-gray-400 over'>
+        <div className='grid grid-cols-1 gap-4 text-white w-full h-screen px-5 mx-auto   py-10 bg-red-800 over'>
 
             {
 
@@ -54,8 +55,8 @@ const Myorders = () => {
                         <img className='w-20 h-20 rounded-full drop-shadow-lg' src={o.product.img} alt="" />
                         <h1 className='font-bold text-left'>{o.product.model}</h1>
                         <h1 className='font-bold text-left'>${o.product.price}</h1>
-                        <small className='text-yellow-900 font-bold rounded-xl'>{o.status}</small>
-                        <button onClick={() => handleCancel(o._id)} className='bg-red-500 px-3 py-2 text-white  '>Cancel</button>
+                        <small className='text-black  font-black rounded-xl'>{o.status}</small>
+                        <button onClick={() => handleCancel(o._id)} className='bg-black px-3 py-2 text-white  hover:font-italic '>Cancel</button>
                     </div>
 
                 )

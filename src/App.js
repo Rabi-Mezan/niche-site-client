@@ -18,6 +18,7 @@ import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import BuyNow from './pages/BuyNow/BuyNow';
 import Authprovider from './context/Authprovider';
 import Myorders from './pages/Myorders/Myorders';
+import Wishlist from './pages/Wishlist/Wishlist';
 
 
 function App() {
@@ -51,6 +52,9 @@ function App() {
             </Route>
             <Route path='/myorders'>
               <Myorders></Myorders>
+            </Route>
+            <Route path='/wishlist'>
+              <Wishlist></Wishlist>
             </Route>
             <PrivateRoute path='/buynow/:id'>
               <BuyNow></BuyNow>

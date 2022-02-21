@@ -31,7 +31,7 @@ const Banner = () => {
                         data={data}
                         time={3000}
                         width="100%"
-                        height="600px"
+                        height="500px"
                         slideNumber={false}
                         captionPosition="bottom"
                         automatic={true}

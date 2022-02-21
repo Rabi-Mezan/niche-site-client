@@ -3,9 +3,18 @@ import './User.css'
 import user from '../../../img/user.png'
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import { useHistory } from 'react-router-dom';
+
 
 const User = () => {
     const { logout } = useAuth()
+    const history = useHistory()
+
+    const handleLogout = () => {
+        logout()
+        history.push('/home')
+    }
+
     return (
         <div>
             <div className="dropdown">
@@ -14,8 +23,9 @@ const User = () => {
                 </button>
                 <div className="dropdown-content">
                     <Link to="/myorders">My Order</Link>
-                    <Link to="/home">
-                        <button onClick={logout}>Logout</button>
+                    <Link to="/wishlist">My Wisthlist</Link>
+                    <Link to="">
+                        <button onClick={handleLogout}>Logout</button>
 
                     </Link>
                     <div>

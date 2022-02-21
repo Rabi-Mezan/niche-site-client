@@ -16,23 +16,23 @@ const Navbar = () => {
     }
 
     return (
-        <div>
+        <div className='sticky top-0 z-10'>
 
             <nav className="relative lg:flex flex-col  items-center lg:justify-start justify-center px-2 py-3 lg:h-60 bg-black ">
                 <div id='logo' className='flex  justify-center'>
-                    <img className='lg:w-32 w-20 h-14 lg:h-20 lg:-mr-8  -mr-5 fill-white' src={logo} alt="" />
-                    <h1 className='text-red-600 lg:text-6xl text-4xl font-bold  my-8 '>SPEEDDO</h1>
+                    <img className='lg:w-32 w-20 h-12 lg:h-20 lg:-mr-8  -mr-5 fill-white' src={logo} alt="" />
+                    <h1 className='text-red-600 lg:text-6xl text-4xl font-bold  lg:my-8 my-4 '>SPEEDDO</h1>
                 </div>
 
                 <div className="lg:w-3/4 px-4 mb-5 mx-auto lg:flex flex-wrap items-center justify-center lg:mt-10">
                     <div className="w-full  relative lg:flex justify-end lg:w-auto  px-4  lg:justify-start">
-                        <Link to='/home' className="text-md menu font-bold leading-relaxed inline-block cursor-pointer text-gray-600 hover:text-white uppercase mr-5 py-2 whitespace-nowrap " >
+                        <Link to='/home' className="text-md menu font-bold leading-relaxed inline-block cursor-pointer text-gray-600 hover:text-white hover:italic uppercase mr-5 py-2 whitespace-nowrap " >
                             Home
                         </Link>
-                        <Link to='/store' className="text-md menu font-bold leading-relaxed inline-block mr-5 py-2 whitespace-nowrap uppercase cursor-pointer text-gray-600 hover:text-white " >
+                        <Link to='/store' className="text-md menu font-bold leading-relaxed inline-block mr-5 py-2 whitespace-nowrap uppercase cursor-pointer text-gray-600 hover:text-white hover:italic " >
                             Store
                         </Link>
-                        <Link to='/about' className="text-md menu font-bold leading-relaxed inline-block mr-5 py-2 whitespace-nowrap uppercase  cursor-pointer text-gray-600 hover:text-white " >
+                        <Link to='/about' className="text-md menu font-bold leading-relaxed inline-block mr-5 py-2 whitespace-nowrap uppercase  cursor-pointer text-gray-600 hover:text-white  hover:italic" >
                             About
                         </Link>
 
@@ -59,8 +59,8 @@ const Navbar = () => {
 
 
                                 : <Link to='/login' className=''>
-                                    <button className='w-20  h-8 text-center font-bold bg-red-700 text-white mx-10'>
-                                        Login
+                                    <button className='w-20  h-8 text-center font-bold bg-red-700 text-white hover:italic mx-10'>
+                                        Join Us
                                     </button>
                                 </Link>
                         }
