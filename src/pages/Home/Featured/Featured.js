@@ -21,7 +21,7 @@ const Featured = () => {
     const handleAddToWishlist = b => {
 
         let wish = { email: user.email, bike: b }
-        fetch('http://localhost:5000/wishlist',
+        fetch('https://speeddo.herokuapp.com/wishlist',
             {
                 method: "POST",
                 headers: {

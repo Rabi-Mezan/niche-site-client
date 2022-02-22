@@ -56,7 +56,7 @@ function App() {
             <Route path='/wishlist'>
               <Wishlist></Wishlist>
             </Route>
-            <PrivateRoute path='/buynow/:id'>
+            <PrivateRoute exact path='/buynow/:id'>
               <BuyNow></BuyNow>
             </PrivateRoute>
           </Switch>

@@ -16,12 +16,12 @@ const Navbar = () => {
     }
 
     return (
-        <div className='sticky top-0 z-10'>
+        <div className=' lg:realtive lg:top-0 lg:z-10'>
 
-            <nav className="relative lg:flex flex-col  items-center lg:justify-start justify-center px-2 py-3 lg:h-60 bg-black ">
+            <nav className="relative lg:flex flex-col  items-center lg:justify-start justify-center px-2 py-3 lg:h-56 bg-black ">
                 <div id='logo' className='flex  justify-center'>
                     <img className='lg:w-32 w-20 h-12 lg:h-20 lg:-mr-8  -mr-5 fill-white' src={logo} alt="" />
-                    <h1 className='text-red-600 lg:text-6xl text-4xl font-bold  lg:my-8 my-4 '>SPEEDDO</h1>
+                    <h1 className='text-red-600 lg:text-6xl text-4xl font-bold  lg:my-6 my-4 '>SPEEDDO</h1>
                 </div>
 
                 <div className="lg:w-3/4 px-4 mb-5 mx-auto lg:flex flex-wrap items-center justify-center lg:mt-10">

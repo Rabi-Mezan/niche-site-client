@@ -22,10 +22,10 @@ const div = () => {
                             <div class="">
 
                             </div>
-                            <a class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">About</a>
-                            <a class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Services</a>
-                            <a class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Why us</a>
-                            <a class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Contact</a>
+                            <a href='/' class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">About</a>
+                            <a href='/' class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Services</a>
+                            <a href='/' class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Why us</a>
+                            <a href='/' class="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">Contact</a>
                             <div class="flex flex-row space-x-8 items-center justify-between">
                                 <a>
                                     <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">

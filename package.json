@@ -16,6 +16,7 @@
     "react-icons": "^4.3.1",
     "react-router-dom": "^5.2.1",
     "react-scripts": "5.0.0",
+    "react-scroll-horizontal": "^1.6.6",
     "rerousel": "^0.1.9",
     "web-vitals": "^2.1.4"
   },

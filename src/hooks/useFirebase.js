@@ -1,5 +1,5 @@
 import initAuth from "../Firebase/init";
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, getIdToken } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 
@@ -9,7 +9,7 @@ const googleProvider = new GoogleAuthProvider();
 const auth = getAuth();
 
 const useFirebase = () => {
-    const [user, setUser] = useState()
+    const [user, setUser] = useState({})
     const [isloading, setIsLoading] = useState(true)
 
 
@@ -17,8 +17,6 @@ const useFirebase = () => {
     const registerUser = (name, email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in 
-                // console.log(name, email);
                 const user = userCredential.user;
                 const newUser = { email, displayName: name }
                 setUser(newUser);
@@ -34,7 +32,6 @@ const useFirebase = () => {
 
     //login with email password
     const login = (email, password) => {
-        setIsLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
 
     }
@@ -42,7 +39,6 @@ const useFirebase = () => {
 
     // google signin
     const googlesignin = () => {
-        setIsLoading(true)
         return signInWithPopup(auth, googleProvider)
 
     }
@@ -50,13 +46,18 @@ const useFirebase = () => {
 
     // observbe user
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
+                getIdToken(user)
+                    .then((token => localStorage.setItem('token', token)))
                 setUser(user)
             } else {
-                setUser('')
+                setUser({})
+
             }
-        });
+            setIsLoading(false)
+        })
+        return () => unsubscribe()
     }, [])
 
 

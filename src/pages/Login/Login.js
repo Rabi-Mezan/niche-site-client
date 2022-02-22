@@ -25,6 +25,7 @@ const Login = () => {
     const handleLogin = (email, password) => {
         login(email, password)
             .then((userCredential) => {
+                setIsLoading(true)
                 history.push(redirectUrl)
 
             })
@@ -39,6 +40,7 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         googlesignin()
             .then((result) => {
+                setIsLoading(true)
                 const user = result.user
                 setUser(user)
                 history.push(redirectUrl)
