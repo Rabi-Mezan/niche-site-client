@@ -8,7 +8,7 @@ import cogoToast from 'cogo-toast';
 
 const Featured = () => {
     const [bike, setBike] = useState([])
-    const { user } = useAuth()
+    const { user, admin } = useAuth()
     useEffect(() => {
 
 
@@ -42,8 +42,8 @@ const Featured = () => {
 
     return (
         <div className='bg-red-900 min-h-screen '>
-            <h1 className='text-black py-10  text-3xl font-bold'>SEE ALL OF <br />
-                <span className='text-black lg:text-5xl font-bold'>
+            <h1 className='text-black py-14  text-3xl font-bold'>SEE ALL OF <br />
+                <span className='text-white lg:text-5xl font-bold'>
                     OUR FEATURED BIKES</span></h1>
 
             <div className='grid lg:grid-cols-3 gap-5 m-10'>
@@ -58,7 +58,7 @@ const Featured = () => {
 
 
                                 {
-                                    user?.email && <div onClick={() => handleAddToWishlist(b)} className='tooltip'>
+                                    user?.email && !admin && <div onClick={() => handleAddToWishlist(b)} className='tooltip'>
                                         <img className='w-14 h-14 fill-white' src={heart} alt="" />
                                         <span class="tooltiptext">Add To Wishlist</span>
                                     </div>
@@ -71,9 +71,11 @@ const Featured = () => {
 
                                 <div class="flex items-center justify-between px-2 py-2 bg-gray-200 dark:bg-gray-700">
                                     <span class="font-bold text-gray-800 dark:text-gray-200">${b.price}</span>
-                                    <Link to={`/buynow/${b._id}`}>
-                                        <button class="px-2 py-1 text-xs lg:font-semibold  text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Buy Now</button>
-                                    </Link>
+                                    {
+                                        !admin && <Link to={`/buynow/${b._id}`}>
+                                            <button class="px-2 py-1 text-xs lg:font-semibold  text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Buy Now</button>
+                                        </Link>
+                                    }
                                     <Link to={`/details/${b._id}`}>
                                         <button class="px-2 py-1 text-xs lg:font-semibold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">See Details</button>
                                     </Link>

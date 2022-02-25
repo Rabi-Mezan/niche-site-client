@@ -22,7 +22,7 @@ const BuyNow = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.insertedId) {
+                if (data?.insertedId) {
                     cogoToast.success('Your Order Placed Successfully !!');
                 }
             })
@@ -36,12 +36,21 @@ const BuyNow = () => {
         fetch(`https://speeddo.herokuapp.com/details/${id}`)
             .then(res => res.json())
             .then(data => {
-                setIsLoading(false)
                 setDetails(data)
             })
-    }, [user?.email])
+            .finally(() => {
+                setIsLoading(false)
+            })
+    }, [])
 
-
+    if (isloading)
+        return (
+            <div class="flex justify-center items-center h-screen">
+                <div class="spinner-grow inline-block w-20 h-20  rounded-full opacity-0" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        )
 
     return (
         <div
@@ -59,9 +68,9 @@ const BuyNow = () => {
 
 
             <div className=''>
-                <div className='flex flex-col  bg-transparent justify-center items-center lg:w-2/3  p-5'>
+                <div className='flex flex-col  bg-transparent justify-center items-center lg:w-2/3  px-5'>
 
-                    <form className='w-full flex flex-col my-5 lg:p-5 lg:text-lg text-xs' onSubmit={handleSubmit(onSubmit)}>
+                    <form className='w-full flex flex-col mt-2 lg:p-5 lg:text-lg text-xs' onSubmit={handleSubmit(onSubmit)}>
                         <div className='flex justify-between items-center'>
                             <label className='text-white'>Customer Name :</label>
                             <input placeholder='Name' type='text' className='border w-2/3 h-12 mb-4 rounded shadow p-1' value={user?.displayName}   {...register("name", { required: true, maxLength: 20 })} />

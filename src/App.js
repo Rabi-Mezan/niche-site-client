@@ -19,6 +19,7 @@ import BuyNow from './pages/BuyNow/BuyNow';
 import Authprovider from './context/Authprovider';
 import Myorders from './pages/Myorders/Myorders';
 import Wishlist from './pages/Wishlist/Wishlist';
+import MakeAdmin from './pages/Admin/MakeAdmin/MakeAdmin';
 
 
 function App() {
@@ -56,9 +57,13 @@ function App() {
             <Route path='/wishlist'>
               <Wishlist></Wishlist>
             </Route>
+            <Route path='/makeadmin'>
+              <MakeAdmin></MakeAdmin>
+            </Route>
             <PrivateRoute exact path='/buynow/:id'>
               <BuyNow></BuyNow>
             </PrivateRoute>
+
           </Switch>
           <Footer></Footer>
         </BrowserRouter>
