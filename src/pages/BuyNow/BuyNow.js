@@ -15,7 +15,7 @@ const BuyNow = () => {
     const onSubmit = data => {
         data.product = details
         data.status = 'pending'
-        fetch('https://speeddo.herokuapp.com/orders', {
+        fetch('https://lit-dawn-51201.herokuapp.com/orders', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data)
@@ -33,7 +33,7 @@ const BuyNow = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch(`https://speeddo.herokuapp.com/details/${id}`)
+        fetch(`https://lit-dawn-51201.herokuapp.com/details/${id}`)
             .then(res => res.json())
             .then(data => {
                 setDetails(data)
@@ -64,13 +64,13 @@ const BuyNow = () => {
             }}
 
 
-            className='w-full mx-auto lg:p-5 min-h-screen  '>
+            className='w-full mx-auto grid  lg:p-5 min-h-screen  '>
 
 
-            <div className=''>
-                <div className='flex flex-col  bg-transparent justify-center items-center lg:w-2/3  px-5'>
+            <div className='flex items-center'>
+                <div className='flex flex-col  bg-transparent justify-center items-center lg:w-2/3 w-full px-5'>
 
-                    <form className='w-full flex flex-col mt-5 lg:p-5 lg:text-lg text-xs' onSubmit={handleSubmit(onSubmit)}>
+                    <form className='w-full  flex-col  lg:p-5 lg:text-lg text-xs' onSubmit={handleSubmit(onSubmit)}>
                         <div className='flex justify-between items-center'>
                             <label className='text-white'>Customer Name :</label>
                             <input placeholder='Name' type='text' className='border w-2/3 h-12 mb-4 rounded shadow p-1' value={user?.displayName}   {...register("name", { required: true, maxLength: 20 })} />
@@ -103,9 +103,9 @@ const BuyNow = () => {
 
                         <hr className='my-3' />
 
-                        <div className='w-full  lg:flex justify-between my-5 '>
+                        <div className='w-full  lg:flex justify-between my-10 '>
                             <h1 className='lg:text-4xl text-2xl font-bold text-red-600'>TOTAL : ${details.price}</h1>
-                            <input className='lg:w-1/3 w-1/2 bg-red-500  hover:bg-red-700 cursor-pointer h-10 text-white text-md font-bold rounded shadow' value='Confirm Order' type="submit" />
+                            <input className='lg:w-1/3 w-1/2 mt-5 lg:mt-0 bg-red-500  hover:bg-red-700 cursor-pointer h-10 text-white text-md font-bold rounded shadow' value='Confirm Order' type="submit" />
                         </div>
                     </form>
 

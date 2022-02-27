@@ -81,7 +81,7 @@ const useFirebase = () => {
     //save user
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        fetch('https://speeddo.herokuapp.com/users', {
+        fetch('https://lit-dawn-51201.herokuapp.com/users', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -95,7 +95,7 @@ const useFirebase = () => {
     //check admin
     useEffect(() => {
 
-        fetch(`https://speeddo.herokuapp.com/users/${user.email}`)
+        fetch(`https://lit-dawn-51201.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin)

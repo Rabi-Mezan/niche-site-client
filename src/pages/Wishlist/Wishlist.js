@@ -7,7 +7,7 @@ const Wishlist = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch(`https://speeddo.herokuapp.com/mywishlist/${user?.email}`)
+        fetch(`https://lit-dawn-51201.herokuapp.com/mywishlist/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setIsLoading(false)

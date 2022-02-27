@@ -12,7 +12,7 @@ const Featured = () => {
     useEffect(() => {
 
 
-        fetch('https://speeddo.herokuapp.com/bikes')
+        fetch('https://lit-dawn-51201.herokuapp.com/bikes')
             .then(res => res.json())
             .then(data => setBike(data))
 
@@ -21,7 +21,7 @@ const Featured = () => {
     const handleAddToWishlist = b => {
 
         let wish = { email: user.email, bike: b }
-        fetch('https://speeddo.herokuapp.com/wishlist',
+        fetch('https://lit-dawn-51201.herokuapp.com/wishlist',
             {
                 method: "POST",
                 headers: {

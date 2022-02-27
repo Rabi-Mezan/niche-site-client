@@ -52,7 +52,7 @@ const About = () => {
             <div class="py-4 bg-black text-white">
                 <div class="container mx-auto flex flex-col md:flex-row my-5 ">
                     <div class="flex flex-col  lg:w-full justify-start text-left p-8">
-                        <p class="text-5xl font-bold md:text-5xl text-red-700 my-4 leading-relaxed ">Contact our Care</p>
+                        <p class="text-4xl font-bold md:text-5xl text-red-700 my-5 lg:leading-relaxed ">Contact our Care</p>
                         <p class="font-sans text-sm md:text-lg my-2 md:my-4"><svg class="inline-block fill-current mr-2"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path

@@ -6,7 +6,7 @@ const Details = () => {
     const [details, setDetails] = useState({})
 
     useEffect(() => {
-        fetch(`https://speeddo.herokuapp.com/details/${id}`)
+        fetch(`https://lit-dawn-51201.herokuapp.com/details/${id}`)
             .then(res => res.json())
             .then(data => setDetails(data))
     }, [])

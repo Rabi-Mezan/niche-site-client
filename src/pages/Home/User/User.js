@@ -18,7 +18,7 @@ const User = () => {
     return (
         <div>
             <div className="dropdown">
-                <button className="dropbtn">
+                <button className="dropbtn drop-shadow-lg">
                     <img className='w-10 h-10' src={user} alt="" />
                 </button>
                 {

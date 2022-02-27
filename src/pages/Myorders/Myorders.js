@@ -12,7 +12,7 @@ const Myorders = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch(`https://speeddo.herokuapp.com/myorders/${user?.email}`,
+        fetch(`https://lit-dawn-51201.herokuapp.com/myorders/${user?.email}`,
             {
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('token')}`
@@ -43,7 +43,7 @@ const Myorders = () => {
     const handleCancel = id => {
         const procedd = window.confirm('Are you sure to cancel the order??')
         if (procedd) {
-            fetch(`https://speeddo.herokuapp.com/myorders/${id}`, {
+            fetch(`https://lit-dawn-51201.herokuapp.com/myorders/${id}`, {
                 method: 'DELETE',
                 headers: {
                     "content-type": "application/json"
@@ -85,7 +85,7 @@ const Myorders = () => {
 
                     orders.map((o, index) =>
 
-                        <div className='lg:flex lg:justify-around lg:items-center text-left  my-3  shadow-lg py-1'>
+                        <div className='lg:flex lg:justify-around items-center lg:text-left  my-3  shadow-lg py-1'>
 
 
                             <h1 className='hidden md:block'>{index}</h1>
