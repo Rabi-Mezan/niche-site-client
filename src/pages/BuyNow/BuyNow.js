@@ -64,13 +64,13 @@ const BuyNow = () => {
             }}
 
 
-            className='w-full mx-auto lg:p-5 min-h-screen '>
+            className='w-full mx-auto lg:p-5 min-h-screen  '>
 
 
             <div className=''>
                 <div className='flex flex-col  bg-transparent justify-center items-center lg:w-2/3  px-5'>
 
-                    <form className='w-full flex flex-col mt-2 lg:p-5 lg:text-lg text-xs' onSubmit={handleSubmit(onSubmit)}>
+                    <form className='w-full flex flex-col mt-5 lg:p-5 lg:text-lg text-xs' onSubmit={handleSubmit(onSubmit)}>
                         <div className='flex justify-between items-center'>
                             <label className='text-white'>Customer Name :</label>
                             <input placeholder='Name' type='text' className='border w-2/3 h-12 mb-4 rounded shadow p-1' value={user?.displayName}   {...register("name", { required: true, maxLength: 20 })} />

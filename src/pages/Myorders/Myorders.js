@@ -12,7 +12,7 @@ const Myorders = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch(`http://localhost:5000/myorders/${user?.email}`,
+        fetch(`https://speeddo.herokuapp.com/myorders/${user?.email}`,
             {
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('token')}`

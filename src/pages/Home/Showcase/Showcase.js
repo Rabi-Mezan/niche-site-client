@@ -17,14 +17,14 @@ const Showcase = () => {
 
             <div className=' lg:flex justify-center gap-5 lg:mt-28  items-center p-5 '>
 
-                <div className='mt-32 overflow-hidden bg-no-repeat bg-cover max-w-sm border-2 border-red-700'>
+                <div className='mt-32 overflow-hidden bg-no-repeat bg-cover lg:max-w-sm w-full border-2 border-red-700'>
                     <img className=' shadow-lg hover:scale-105 transition duration-300 ease-in-out  ' src="https://www.royalenfield.com/content/dam/royal-enfield/india/home/banner/mobile/miy_riding_jacket.jpg" alt="" />
 
                 </div>
-                <div className='overflow-hidden border-2 border-red-700 bg-no-repeat bg-cover max-w-sm'>
+                <div className='overflow-hidden border-2 border-red-700 bg-no-repeat bg-cover lg:max-w-sm w-full'>
                     <img className='hover:scale-110 transition duration-300 ease-in-out' src="https://www.royalenfield.com/content/dam/royal-enfield/india/motorcycles/classic-350/podcast/homepage_podcast.jpg" alt="" />
                 </div>
-                <div className='lg:mt-32 border-2 border-red-700 overflow-hidden bg-no-repeat bg-cover max-w-sm'>
+                <div className='lg:mt-32 border-2 border-red-700 overflow-hidden bg-no-repeat bg-cover lg:max-w-sm w-full'>
                     <img className='hover:scale-110 transition duration-300 ease-in-out overflow-hidden' src="https://www.royalenfield.com/content/dam/royal-enfield/india/accessories/banner/campaign/slip_on_silencer.jpg" alt="" />
                 </div>
             </div>

@@ -95,7 +95,7 @@ const useFirebase = () => {
     //check admin
     useEffect(() => {
 
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://speeddo.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin)
